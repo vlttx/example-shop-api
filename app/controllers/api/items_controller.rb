@@ -31,7 +31,7 @@ class Api::ItemsController < ApplicationController
 		if @item.destroy
 			render status: 204
 		else
-			render jsonL {message: "Unable to delete"}, status: 400
+			render json: {message: "Unable to delete"}, status: 400
 		end
 	end
 
@@ -39,6 +39,7 @@ class Api::ItemsController < ApplicationController
 
 	def set_item
 		@item = Item.find_by(id: params[:id])
+	end
 	def item_params
 		params.require(:item).permit(:name, :price, :img_url, :description)
 	end
