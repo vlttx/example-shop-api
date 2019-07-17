@@ -6,7 +6,9 @@ class SessionsController < ApplicationController
 			render json: @user
 		else 
 			render json: {
-				error: "Invalid credentials"
+				error: "Invalid credentials",
+				# details: @user.errors.full_messages
+				# could be used for error rendering in React
 			}, status: :unauthorized
 		end
 	end
