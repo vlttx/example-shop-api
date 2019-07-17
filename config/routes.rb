@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :users
 	namespace :api do
 	resources :items, except: [:new, :edit]
 end
